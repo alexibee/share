@@ -1,4 +1,5 @@
 const express = require('express');
+const Post = require('../models/postModel');
 
 const router = express.Router();
 
@@ -6,19 +7,26 @@ router.get('/', (req, res) => {
 	res.json({ msg: 'GET all problems' });
 });
 
-router.get('/:id', (res, req) => {
+router.get('/:id', (req, res) => {
 	res.json({ msg: 'GET single problem' });
 });
 
-router.post('/', (res, req) => {
-	res.json({ msg: 'POST (create) a new problem' });
+router.post('/', async (req, res) => {
+	const { title, content } = req.body;
+
+	try {
+		const post = await Post.create({ title, content });
+		res.status(200).json(post);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
 });
 
-router.delete('/:id', (res, req) => {
+router.delete('/:id', (req, res) => {
 	res.json({ msg: 'DELETE a problem' });
 });
 
-router.patch('/:id', (res, req) => {
+router.patch('/:id', (req, res) => {
 	res.json({ msg: 'UPDATE a problem' });
 });
 
