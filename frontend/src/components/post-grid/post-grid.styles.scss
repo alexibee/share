@@ -1,0 +1,8 @@
+.post-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.column {
+	height: 400px;
+	overflow: hidden;
+}
