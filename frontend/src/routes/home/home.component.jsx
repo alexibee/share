@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react';
+import PostGrid from '../../components/post-grid/post-grid.component';
 
 const Home = () => {
-	const [posts, setPosts] = useState(null);
-
-	useEffect(() => {
-		const fetchPosts = async () => {
-			const response = await fetch('/api/posts');
-			const json = await response.json();
-
-			if (response.ok) {
-				setPosts(json);
-			}
-		};
-		fetchPosts();
-	}, []);
-
 	return (
-		<div>
-			{!!posts && (
-				<div>
-					{posts.map((post) => (
-						<p key={post._id}>{post.title}</p>
-					))}
-				</div>
-			)}
+		<div className='container'>
+			<h1>Posts</h1>
+			<PostGrid />
 		</div>
 	);
 };
