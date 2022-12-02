@@ -1,0 +1,93 @@
+@keyframes glow {
+	0% {
+		box-shadow: 0px 0px 80px 60px rgb(57, 33, 131);
+		width: 300px;
+		height: 300px;
+	}
+	50% {
+		box-shadow: 0px 0px 120px 100px rgb(47, 16, 121);
+		width: 400px;
+		height: 400px;
+	}
+	100% {
+		box-shadow: 0px 0px 80px 60px rgb(57, 33, 131);
+		width: 300px;
+		height: 300px;
+	}
+}
+
+@keyframes glow2 {
+	0% {
+		box-shadow: 0px 0px 40px 20px rgb(206, 102, 241);
+		width: 300px;
+		height: 300px;
+	}
+	50% {
+		box-shadow: 0px 0px 120px 100px rgb(206, 102, 241);
+		width: 400px;
+		height: 400px;
+	}
+	100% {
+		box-shadow: 0px 0px 40px 20px rgb(206, 102, 241);
+		width: 300px;
+		height: 300px;
+	}
+}
+
+.ball {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.glow-pink {
+	box-shadow: 0px 0px 80px 60px rgb(102, 47, 142);
+	width: 300px;
+	height: 300px;
+}
+
+.glow-blue {
+	animation-name: glow;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+.inside-ball {
+	font-size: 60px;
+	color: rgb(205, 204, 232);
+	width: 300px;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.waveVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.wrap {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(23, 2, 132, 0.3) 0%,
+		rgba(78, 2, 132, 0.3) 100%
+	);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+}

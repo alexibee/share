@@ -4,18 +4,16 @@ import Navigation from './routes/navigation/navigation.component';
 
 const App = () => {
 	return (
-		<Routes>
-			<Route
-				exact
-				path='/'
-				element={<Navigation />}
-			>
+		<>
+			{false && <Navigation />}
+			<Routes>
 				<Route
-					index
+					exact
+					path='/'
 					element={<Home />}
 				/>
-			</Route>
-		</Routes>
+			</Routes>
+		</>
 	);
 };
 
