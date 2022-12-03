@@ -1,11 +1,11 @@
-import Landing from '../../components/landing/landing.component';
 import PostGrid from '../../components/post-grid/post-grid.component';
+import Welcome from '../../components/welcome/welcome.component';
 
 const Home = () => {
 	return (
 		<div className='container'>
-			<Landing />
-			{/* <PostGrid /> */}
+			<Welcome />
+			<PostGrid />
 		</div>
 	);
 };

@@ -5,13 +5,17 @@ import Navigation from './routes/navigation/navigation.component';
 const App = () => {
 	return (
 		<>
-			{false && <Navigation />}
+			<Navigation />
 			<Routes>
 				<Route
 					exact
 					path='/'
 					element={<Home />}
 				/>
+				{/* <Route
+					path='/dashboard'
+					element={<Home />}
+				/> */}
 			</Routes>
 		</>
 	);

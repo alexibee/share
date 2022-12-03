@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import './landing.styles.scss';
+import { useEffect, useState } from 'react';
+import './welcome.styles.scss';
 
-const Landing = () => {
+const Welcome = () => {
 	const [text, setText] = useState('breathe');
 	const [glow, setGlow] = useState('glow-blue');
-	const [enter, setEnter] = useState(false);
+	const [display, setDisplay] = useState(
+		window.localStorage.getItem('display') || ''
+	);
 
 	const onHoverHandler = () => {
 		setGlow((prev) => {
@@ -15,8 +17,20 @@ const Landing = () => {
 		});
 	};
 
+	useEffect(() => {
+		setDisplay(window.localStorage.getItem('display'));
+	}, []);
+
+	useEffect(() => {
+		window.localStorage.setItem('display', display);
+	}, [display]);
+
+	const onClickHandler = () => {
+		setDisplay(' display-none');
+	};
+
 	return (
-		<>
+		<div className={`welcome${display}`}>
 			<video
 				className='waveVideo'
 				autoPlay
@@ -34,13 +48,13 @@ const Landing = () => {
 						className='inside-ball'
 						onMouseEnter={onHoverHandler}
 						onMouseLeave={onHoverHandler}
-						onClick={() => setEnter(true)}
+						onClick={onClickHandler}
 					>
 						{text}
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
-export default Landing;
+export default Welcome;
