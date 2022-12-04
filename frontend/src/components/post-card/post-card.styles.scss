@@ -1,23 +1,22 @@
 .post-card {
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+	font-family: Lato;
+	border-bottom: 2px solid lightgrey;
 	padding: 12px;
 	margin: 16px 0;
 	min-height: 150px;
-	background-color: rgb(253, 253, 253);
-	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	header {
 		padding: 6px;
-		font-weight: 500;
+		font-weight: 900;
 		font-size: 18px;
-		font-weight: 700;
 	}
 	article {
-		font-family: Lato;
 		padding: 6px;
-		font-style: italic;
+		flex-grow: 1;
 	}
 	footer {
-		font-family: Lato;
 		padding: 6px;
 		font-style: italic;
 		font-size: 10px;

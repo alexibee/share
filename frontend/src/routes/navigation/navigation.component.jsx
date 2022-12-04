@@ -11,6 +11,12 @@ const Navigation = () => {
 				>
 					LOGO
 				</Link>
+				<Link
+					to='/'
+					className='logo-link'
+				>
+					ShareSpace
+				</Link>
 				<Link to='/'> HOME </Link>
 			</div>
 			<Outlet />

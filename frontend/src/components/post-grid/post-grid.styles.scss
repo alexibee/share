@@ -3,3 +3,11 @@
 	grid-template-columns: 2fr 1fr;
 	margin: 0 40px;
 }
+
+.column-container {
+	padding: 30px;
+	border-left: 2px solid lightgrey;
+	&:nth-child(odd) {
+		border-left: none;
+	}
+}

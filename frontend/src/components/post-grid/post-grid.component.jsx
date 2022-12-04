@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './post-grid.styles.scss';
 import PostCard from '../post-card/post-card.component';
+import SearchInput from '../search-input/search-input.component';
 
 const PostGrid = () => {
 	const [posts, setPosts] = useState(null);
@@ -16,10 +17,14 @@ const PostGrid = () => {
 		};
 		fetchPosts();
 	}, []);
+	const onClickHandler = () => {
+		window.localStorage.setItem('display', '');
+	};
 
 	return (
 		<div className='post-grid'>
 			<div className='column-container'>
+				<SearchInput />
 				<div className='column'>
 					{!!posts &&
 						posts.map((post) => (
@@ -29,6 +34,9 @@ const PostGrid = () => {
 							/>
 						))}
 				</div>
+			</div>
+			<div className='column-container'>
+				<button onClick={onClickHandler}>YOOO</button>
 			</div>
 		</div>
 	);
